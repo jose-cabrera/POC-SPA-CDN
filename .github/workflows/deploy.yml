@@ -47,8 +47,11 @@ jobs:
 
     steps:
     - name: Create forlder
-      run: mkdir dist
+      run: mkdir /dist
       
+    - name: Display structure of downloaded files
+      run: ls -R
+  
     - name: Download dist folder
       uses: actions/download-artifact@v3
       with:

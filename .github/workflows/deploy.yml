@@ -29,6 +29,12 @@ jobs:
     
     - name: Run Build
       run: yarn build
+      
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+          name: dist
+          path: dist
 
   upload-to-bucket:
     name: Upload dist to Bucket
@@ -40,6 +46,11 @@ jobs:
       id-token: 'write'
 
     steps:
+    - name: Download dist folder
+      uses: actions/download-artifact@v3
+      with:
+            name: dist
+    
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
       with:

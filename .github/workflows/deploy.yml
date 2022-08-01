@@ -23,6 +23,7 @@ jobs:
     steps:
     - name: Execute build
       run: | 
+        ls
         yarn
         yarn build        
 

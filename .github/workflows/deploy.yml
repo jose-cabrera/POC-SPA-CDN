@@ -46,6 +46,9 @@ jobs:
       id-token: 'write'
 
     steps:
+    - name: Create forlder
+      run: mkdir dist
+      
     - name: Download dist folder
       uses: actions/download-artifact@v3
       with:

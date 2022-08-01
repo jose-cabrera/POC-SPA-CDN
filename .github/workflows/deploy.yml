@@ -47,7 +47,7 @@ jobs:
 
     steps:
     - name: Create forlder
-      run: mkdir /dist
+      run: mkdir dist
       
     - name: Display structure of downloaded files
       run: ls -R
@@ -56,7 +56,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
             name: dist
-            path: /dist
+            path: dist
     
     - id: 'auth'
       uses: 'google-github-actions/auth@v0'
